@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PrintJob, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:filament_id) }
+  it { should validate_presence_of(:usedWeight) }
+  it { should validate_presence_of(:doneTime) }
+  it { should validate_presence_of(:printer_id) }
+  it { should validate_presence_of(:reference) }
 end
