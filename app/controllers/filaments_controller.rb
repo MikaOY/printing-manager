@@ -1,0 +1,2 @@
+class FilamentsController < ApplicationController
+end
