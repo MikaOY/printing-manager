@@ -1,0 +1,10 @@
+
+<%= form_for @printer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label(:startupCost, 'Startup Cost') %>
+  <%= f.number_field :startupCost %>
+
+  <%= f.submit "Submit" %>
+<% end %>

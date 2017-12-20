@@ -1,0 +1,13 @@
+
+<h1>Printers</h1>
+
+<div class="container">
+  <% @printers.each do |printer| %>
+    <h4>Printer <%= printer.id %></h4>
+
+    <h6>Name: <%= printer.name %></h6>
+    <h6>Startup Cost: $<%= number_with_precision(printer.startupCost, :precision => 2) %></h6>
+    <h6>Created: <%= printer.created_at.strftime('%b %d, %Y') %></h6>
+    <hr>
+  <% end %>
+</div>
