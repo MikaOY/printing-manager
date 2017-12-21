@@ -1,0 +1,21 @@
+
+<%= form_for @printer do |f| %>
+  <%= f.label(:filament_id, 'Filament') %>
+  <%=# TODO: Change to select field to select from stored filaments %>
+  <%= f.text_field :filament_id %>
+
+  <%= f.label(:usedWeight, 'Weight Used') %>
+  <%= f.number_field :usedWeight %>
+
+  <%= f.label(:printer_id, 'Printer') %>
+  <%=# TODO: Change to select field to select from stored printers %>
+  <%= f.text_field :printer_id %>
+
+  <%= f.label(:reference, 'Reference') %>
+  <%= f.text_field :reference %>
+
+  <%= f.label(:doneTime, 'Completed') %>
+  <%= f.number_field :doneTime %>
+
+  <%= f.submit "Submit" %>
+<% end %>
