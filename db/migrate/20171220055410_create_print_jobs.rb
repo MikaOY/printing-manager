@@ -1,6 +1,6 @@
-class CreatePrintJobs < ActiveRecord::Migration[5.1]
+class CreateJobs < ActiveRecord::Migration[5.1]
   def change
-    create_table :print_jobs do |t|
+    create_table :jobs do |t|
       t.references :filament
       t.float :usedWeight
       t.timestamp :doneTime

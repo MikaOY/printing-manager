@@ -1,25 +1,25 @@
 
-class PrintJobsController < ApplicationController
-  #app/controllers/print_jobs_controller.rb
+class JobsController < ApplicationController
+  #app/controllers/jobs_controller.rb
   skip_before_action :verify_authenticity_token
-  before_action :find_print_job, only: [:edit, :update, :show, :destroy]
+  before_action :find_job, only: [:edit, :update, :show, :destroy]
 
   # Index action to render all print jobs
   def index
-    @print_jobs = PrintJob.all
+    @jobs = Job.all
   end
 
   # New action for creating print job
   def new
-    @print_job = PrintJob.new
+    @job = Job.new
   end
 
   # Create action saves the print job into database
   def create
-    @print_job = PrintJob.new(print_job_params)
-    if @print_job.save
+    @job = Job.new(job_params)
+    if @job.save
       flash[:notice] = "Successfully created print job!"
-      redirect_to @print_job 
+      redirect_to @job 
     else
       flash[:alert] = "Error creating new print job!"
       render :new
@@ -32,9 +32,9 @@ class PrintJobsController < ApplicationController
 
   # Update action updates the print job with the new information
   def update
-    if @print_job.update_attributes(print_job_params)
+    if @job.update_attributes(job_params)
       flash[:notice] = "Successfully updated print job!"
-      redirect_to @print_job
+      redirect_to @job
     else
       flash[:alert] = "Error updating print job!"
       render :edit
@@ -47,7 +47,7 @@ class PrintJobsController < ApplicationController
 
   # The destroy action removes the print job permanently from the database
   def destroy
-    if @print_job.destroy
+    if @job.destroy
       flash[:notice] = "Successfully deleted print job!"
     else
       flash[:alert] = "Error updating print job!"
@@ -56,11 +56,11 @@ class PrintJobsController < ApplicationController
 
   private
 
-  def print_job_params
-    params.require(:print_job).permit(:filament_id, :usedWeight, :doneTime, :printer_id, :reference)
+  def job_params
+    params.require(:job).permit(:filament_id, :usedWeight, :doneTime, :printer_id, :reference)
   end
 
-  def find_print_job
-    @print_job = PrintJob.find(params[:id])
+  def find_job
+    @job = Job.find(params[:id])
   end
 end

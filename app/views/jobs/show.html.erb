@@ -1,0 +1,11 @@
+
+<h1>Print Job</h1><p> number <%= @job.id %></p>
+
+<% # TODO: Show filament info (expandable) %>
+<h2>Filament: <%= @job.filament_id %></h2>
+<h2>Weight: $<%= number_with_precision(@job.usedWeight, :precision => 3) %></h2>
+<% # TODO: Show printer info (expandable) %>
+<h2>Printer: <%= @job.printer_id %></h2>
+<h2>Reference: <%= @job.reference %></h2>
+<h2>Completed: <%= @job.doneTime %></h2>
+<h2>Created: <%= @job.created_at.strftime('%b %d, %Y') %></h2>

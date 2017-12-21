@@ -4,7 +4,7 @@
   <%= f.text_field :name %>
 
   <%= f.label(:startupCost, 'Startup Cost') %>
-  <%= f.number_field :startupCost %>
+  <%= f.number_field :startupCost, value: number_to_currency(f.object.startupCost.to_f, delimiter: '', unit: ''), step: :any %>
 
   <%= f.submit "Submit" %>
 <% end %>

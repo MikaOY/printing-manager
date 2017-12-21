@@ -1,0 +1,17 @@
+
+<h3>Print Jobs</h3>
+<div class="container">
+  <% @jobs.each do |job| %>
+    <h4>ID <%= job.id %></h4>
+
+    <% # TODO: Show filament info (expandable) %>
+    <h6>Filament: <%= job.filament_id %></h6>
+    <h6>Weight: <%= number_with_precision(job.usedWeight, :precision => 3) %> kg</h6>
+    <% # TODO: Show printer info (expandable) %>
+    <h6>Printer: <%= job.printer_id %></h6>
+    <h6>Reference: <%= job.reference %></h6>
+    <h6>Completed: <%= job.doneTime.strftime('%H:%M | %b %d, %Y') %></h6>
+    <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %></h6>
+    <hr>
+  <% end %>
+</div>
