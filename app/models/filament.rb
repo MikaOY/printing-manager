@@ -1,4 +1,4 @@
 
 class Filament < ApplicationRecord
-  validates_presence_of :color, :brand, :fullWeight, :type
+  validates_presence_of :color, :brand, :fullWeight, :material
 end

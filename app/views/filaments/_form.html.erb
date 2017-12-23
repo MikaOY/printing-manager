@@ -1,21 +1,16 @@
 
-<%= form_for @job do |f| %>
-  <%= f.label(:filament_id, 'Filament') %>
-  <% # TODO: Change to select field to select from stored filaments %>
-  <%= f.number_field :filament_id %>
+<%= form_for @filament do |f| %>
+  <%= f.label(:material, 'Material') %>
+  <%= f.text_field :material %>
 
-  <%= f.label(:usedWeight, 'Weight Used') %>
-  <%= f.number_field :usedWeight, :step => :any %>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
 
-  <%= f.label(:printer_id, 'Printer') %>
-  <% # TODO: Change to select field to select from stored printers %>
-  <%= f.number_field :printer_id %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
 
-  <%= f.label(:reference, 'Reference') %>
-  <%= f.text_field :reference %>
-
-  <%= f.label(:doneTime, 'Completed') %>
-  <%= f.date_field :doneTime %>
+  <%= f.label(:fullWeight, 'Spool size') %>
+  <%= f.number_field :fullWeight, :step => :any %>
 
   <%= f.submit "Submit" %>
 <% end %>
