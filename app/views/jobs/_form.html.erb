@@ -1,8 +1,7 @@
 
 <%= form_for @job do |f| %>
   <%= f.label(:filament_id, 'Filament') %>
-  <% # TODO: Change to select field to select from stored filaments %>
-  <%= f.number_field :filament_id %>
+  <%= select_tag(:filament_id, options_for_select(Filament.all.map { |f| [f.material, f.id] }), {include_blank: "Select filament"}) %>
 
   <%= f.label(:usedWeight, 'Weight Used') %>
   <%= f.number_field :usedWeight, :step => :any %>
