@@ -1,6 +1,6 @@
 
 <h1>Printer</h1><p> number <%= @printer.id %></p>
 
-<h2>Name: <%= @printer.name %></h2>
-<h2>Startup Cost: $<%= number_with_precision(@printer.startupCost, :precision => 2) %></h2>
-<h2>Created: <%= @printer.created_at.strftime('%b %d, %Y') %></h2>
+<h4>Name: <%= @printer.name %></h4>
+<h4>Startup Cost: $<%= number_with_precision(@printer.startupCost, :precision => 2) %></h4>
+<h4>Created: <%= @printer.created_at.strftime('%b %d, %Y') %></h4>

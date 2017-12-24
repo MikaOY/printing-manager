@@ -1,11 +1,9 @@
 
-<h1>Print Job</h1><p> number <%= @job.id %></p>
+<h1>Print Job</h1><p>ID - <%= @job.id %></p>
 
-<% # TODO: Show filament info (expandable) %>
-<h2>Filament: <%= @job.filament_id %></h2>
-<h2>Weight: $<%= number_with_precision(@job.usedWeight, :precision => 3) %></h2>
-<% # TODO: Show printer info (expandable) %>
-<h2>Printer: <%= @job.printer_id %></h2>
-<h2>Reference: <%= @job.reference %></h2>
-<h2>Completed: <%= @job.doneTime %></h2>
-<h2>Created: <%= @job.created_at.strftime('%b %d, %Y') %></h2>
+<h4>Filament: <%= Filament.find(@job.filament_id).brand + ' ' +  Filament.find(@job.filament_id).material + ' (' +  Filament.find(@job.filament_id).color + ')' %> </h4>
+<h4>Weight: <%= number_with_precision(@job.usedWeight, :precision => 3) %>kg</h4>
+<h4>Printer: <%= Printer.find(@job.printer_id).name %> </h4>
+<h4>Reference: <%= @job.reference %> </h4>
+<h4>Completed: <%= @job.doneTime %> </h4>
+<h4>Created: <%= @job.created_at.strftime('%b %d, %Y') %> </h4>
