@@ -1,14 +1,13 @@
 
 <%= form_for @job do |f| %>
   <%= f.label(:filament_id, 'Filament') %>
-  <%= select_tag(:filament_id, options_for_select(Filament.all.map { |f| [f.material, f.id] }), {include_blank: "Select filament"}) %>
+  <%= select_tag(:filament_id, options_for_select(Filament.all.map { |f| [f.material + ' - ' + f.color + ' - ' + f.brand, f.id] }), {include_blank: "Select filament"}) %>
 
   <%= f.label(:usedWeight, 'Weight Used') %>
   <%= f.number_field :usedWeight, :step => :any %>
 
   <%= f.label(:printer_id, 'Printer') %>
-  <% # TODO: Change to select field to select from stored printers %>
-  <%= f.number_field :printer_id %>
+  <%= select_tag(:printer_id, options_for_select(Printer.all.map { |p| [p.name, p.id] }), {include_blank: "Select printer"}) %>
 
   <%= f.label(:reference, 'Reference') %>
   <%= f.text_field :reference %>
