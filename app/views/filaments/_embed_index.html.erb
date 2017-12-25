@@ -1,9 +1,9 @@
 
 
-<h3>All Filaments</h3>
+<h4>My Filaments</h4>
 <div class="container">
-  <% @filaments.each do |filament| %>
-    <h4>ID <%= filament.id %></h4>
+  <% Filament.all.each do |filament| %>
+    <h5>ID <%= filament.id %></h5>
 
     <h6>Type: <%= filament.material %></h6>
     <h6>Color: <%= filament.color %></h6>

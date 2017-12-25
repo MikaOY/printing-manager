@@ -1,19 +1,33 @@
 
-<h3>Print Jobs</h3>
-<div><%= button_to "Add Job", { action: "new" }, method: :get %><div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-9"><h3>Print Jobs</h3></div>
+          <div class="col-3"><div><%= button_to "Add Job", { action: "new" }, method: :get %></div></div>
+        </div>
+      </div>
 
-<div class="container" style="margin-top:2em;">
-  <% @jobs.each do |job| %>
-    <h6>Job ID - <%= job.id %></h6>
+      <div class="container" style="margin-top:1em;">
+        <% @jobs.each do |job| %>
+          <h6>Job ID - <%= job.id %></h6>
 
-    <h6>Filament: <%= Filament.find(job.filament_id).brand + ' ' +  Filament.find(job.filament_id).material + ' (' +  Filament.find(job.filament_id).color + ')' %> </h6>
-    <h6>Weight: <%= number_with_precision(job.usedWeight, :precision => 3) %> kg</h6>
-    <h6>Printer: <%= Printer.find(job.printer_id).name %> </h6>
-    <h6>Reference: <%= job.reference %></h6>
-    <h6>Completed: <%= job.doneTime.strftime('%H:%M | %b %d, %Y') %> </h6>
-    <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %> </h6>
+          <h6>Filament: <%= Filament.find(job.filament_id).brand + ' ' +  Filament.find(job.filament_id).material + ' (' +  Filament.find(job.filament_id).color + ')' %> </h6>
+          <h6>Weight: <%= number_with_precision(job.usedWeight, :precision => 3) %> kg</h6>
+          <h6>Printer: <%= Printer.find(job.printer_id).name %> </h6>
+          <h6>Reference: <%= job.reference %></h6>
+          <h6>Completed: <%= job.doneTime.strftime('%H:%M | %b %d, %Y') %> </h6>
+          <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %> </h6>
 
-    <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get %><div>
-    <hr>    
-  <% end %>
+          <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get %></div>
+          <hr>    
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <%= render "filaments/embed_index" %>
+    </div>
+  </div>
 </div>
