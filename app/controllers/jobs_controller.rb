@@ -20,7 +20,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "Successfully created print job!"
-      redirect_to :action => 'index' 
+      redirect_to :action => 'show' 
     else
       flash[:alert] = "Error creating new print job!"
       render :action => 'index'
@@ -58,7 +58,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:filament_id, :usedWeight, :doneTime, :printer_id, :reference)
+    params.require(:job).permit(:filament_id, :usedWeight, :duration_mins, :printer_id, :reference)
   end
 
   def find_job

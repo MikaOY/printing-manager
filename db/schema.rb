@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171223013323) do
+ActiveRecord::Schema.define(version: 20171225091504) do
 
   create_table "filaments", force: :cascade do |t|
     t.string "color"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20171223013323) do
   create_table "jobs", force: :cascade do |t|
     t.integer "filament_id"
     t.float "usedWeight"
-    t.datetime "doneTime"
     t.integer "printer_id"
     t.string "reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "duration_mins"
     t.index ["filament_id"], name: "index_jobs_on_filament_id"
     t.index ["printer_id"], name: "index_jobs_on_printer_id"
   end

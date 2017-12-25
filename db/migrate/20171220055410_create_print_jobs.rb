@@ -3,7 +3,7 @@ class CreateJobs < ActiveRecord::Migration[5.1]
     create_table :jobs do |t|
       t.references :filament
       t.float :usedWeight
-      t.timestamp :doneTime
+      t.timestamp :duration_mins
       t.references :printer
       t.string :reference
 
