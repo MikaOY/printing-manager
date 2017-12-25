@@ -10,7 +10,7 @@
       </div>
 
       <div class="container" style="margin-top:1em;">
-        <% @jobs.each do |job| %>
+        <% Job.all.each do |job| %>
           <h6>Job ID - <%= job.id %></h6>
 
           <h6>Filament: <%= Filament.find(job.filament_id).brand + ' ' +  Filament.find(job.filament_id).material + ' (' +  Filament.find(job.filament_id).color + ')' %> </h6>
@@ -21,6 +21,7 @@
           <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %> </h6>
 
           <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get %></div>
+          <div><%= button_to "Delete", { action: "destroy", id: job.id }, method: :delete %></div>
           <hr>    
         <% end %>
       </div>

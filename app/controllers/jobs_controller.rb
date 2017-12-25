@@ -16,13 +16,14 @@ class JobsController < ApplicationController
 
   # Create action saves the print job into database
   def create
+    # render json: params
     @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "Successfully created print job!"
-      redirect_to @job 
+      redirect_to :action => 'index' 
     else
       flash[:alert] = "Error creating new print job!"
-      render :new
+      render :action => 'index'
     end
   end
 
