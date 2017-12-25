@@ -1,15 +1,11 @@
 
 
-<h4>My Filaments</h4>
-<div class="container">
+<h5>My Filaments</h5>
+<div class="container first-section">
   <% Filament.all.each do |filament| %>
-    <h5>ID <%= filament.id %></h5>
-
-    <h6>Type: <%= filament.material %></h6>
-    <h6>Color: <%= filament.color %></h6>
-    <h6>Brand: <%= filament.brand %></h6>
-    <h6>Spool size: <%= filament.fullWeight %></h6>
-    <h6>Added: <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></h6>
+    <h6><%= filament.brand %> <%= filament.material %> (<%= filament.color %>)</h6>
+    <p>Spool size: <%= filament.fullWeight %></p>
+    <p>Added <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></p>
     <hr>
   <% end %>
 </div>

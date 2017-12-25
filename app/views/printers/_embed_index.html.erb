@@ -1,10 +1,8 @@
 
-<h3 style="margin-top:1em;">Active printers</h3>
-<div class="container">
-  <% @printers.each do |printer| %>
-    <h4>ID <%= printer.id %></h4>
-
-    <h6>Name: <%= printer.name %></h6>
+<h5 class="first-heading">Active printers</h5>
+<div class="container first-section">
+  <% Printer.all.each do |printer| %>
+    <h6><%= printer.name %></h6>
     <h6>Startup Cost: $<%= number_with_precision(printer.startupCost, :precision => 2) %></h6>
     <h6>Created: <%= printer.created_at.strftime('%b %d, %Y') %></h6>
     <hr>

@@ -18,6 +18,20 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+p {
+  margin-bottom: 0; 
+}
+
+.first-heading {
+  margin-top: 1.5em; 
+}
+
+.first-section {
+  margin-top: 1em; 
+}
+
+// DEBUG
+
 .red {
   background-color: red; 
 }
