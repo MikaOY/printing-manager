@@ -4,7 +4,7 @@
 <div class="container first-section">
   <% Filament.all.each do |filament| %>
     <h6><%= filament.brand %> <%= filament.material %> (<%= filament.color %>)</h6>
-    <p>Spool size: <%= filament.fullWeight %></p>
+    <p>Spool size: <%= filament.full_weight %></p>
     <p>Added <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></p>
     <hr>
   <% end %>

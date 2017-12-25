@@ -3,8 +3,8 @@
   <%= f.label(:filament_id, 'Filament') %>
   <%= select_tag(:filament_id, options_for_select(Filament.all.map { |f| [f.brand + ' - ' + f.material + ' - ' + f.color, f.id] }, @job.filament_id), {include_blank: "Select filament"}) %>
 
-  <%= f.label(:usedWeight, 'Weight Used') %>
-  <%= f.number_field :usedWeight, :step => :any %>
+  <%= f.label(:used_weight, 'Weight Used') %>
+  <%= f.number_field :used_weight, :step => :any %>
 
   <%= f.label(:printer_id, 'Printer') %>
   <%= select_tag(:printer_id, options_for_select(Printer.all.map { |p| [p.name, p.id] }, @job.printer_id), {include_blank: "Select printer"}) %>

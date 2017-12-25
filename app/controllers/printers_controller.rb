@@ -57,7 +57,7 @@ class PrintersController < ApplicationController
   private
 
   def printer_params
-    params.require(:printer).permit(:name, :startupCost)
+    params.require(:printer).permit(:name, :startup_cost)
   end
 
   def find_printer

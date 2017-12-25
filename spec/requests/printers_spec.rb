@@ -53,7 +53,7 @@ RSpec.describe 'Printers API' do
 
   # Test suite for POST /printers
   describe 'POST /printers' do
-    let(:valid_attributes) { { name: 'Tika BluJay', startupCost: 5.00 } }
+    let(:valid_attributes) { { name: 'Tika BluJay', startup_cost: 5.00 } }
 
     context 'when request attributes are valid' do
       before { post "/printers", params: valid_attributes }
@@ -79,7 +79,7 @@ RSpec.describe 'Printers API' do
 
   # Test suite for PUT /printers/:id
   describe 'PUT /printers/:id' do
-    let(:valid_attributes) { { name: 'Tika BlackBird', startupCost: 5.00 } }
+    let(:valid_attributes) { { name: 'Tika BlackBird', startup_cost: 5.00 } }
 
     before { put "/printers/#{id}", params: valid_attributes }
 

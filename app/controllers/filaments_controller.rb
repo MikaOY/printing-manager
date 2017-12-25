@@ -57,7 +57,7 @@ class FilamentsController < ApplicationController
   private
 
   def filament_params
-    params.require(:filament).permit(:color, :brand, :fullWeight, :material)
+    params.require(:filament).permit(:color, :brand, :full_weight, :material)
   end
 
   def find_filament

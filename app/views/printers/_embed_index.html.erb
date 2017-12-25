@@ -3,7 +3,7 @@
 <div class="container first-section">
   <% Printer.all.each do |printer| %>
     <h6><%= printer.name %></h6>
-    <h6>Startup Cost: $<%= number_with_precision(printer.startupCost, :precision => 2) %></h6>
+    <h6>Startup Cost: $<%= number_with_precision(printer.startup_cost, :precision => 2) %></h6>
     <h6>Created: <%= printer.created_at.strftime('%b %d, %Y') %></h6>
     <hr>
   <% end %>

@@ -58,7 +58,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:filament_id, :usedWeight, :duration_mins, :printer_id, :reference)
+    params.require(:job).permit(:filament_id, :used_weight, :duration_mins, :printer_id, :reference)
   end
 
   def find_job

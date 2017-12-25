@@ -2,7 +2,7 @@
 <h1>Print Job</h1><p>ID - <%= @job.id %></p>
 
 <h4>Filament: <%= Filament.find(@job.filament_id).brand + ' ' +  Filament.find(@job.filament_id).material + ' (' +  Filament.find(@job.filament_id).color + ')' %> </h4>
-<h4>Weight: <%= number_with_precision(@job.usedWeight, :precision => 3) %>kg</h4>
+<h4>Weight: <%= number_with_precision(@job.used_weight, :precision => 3) %>kg</h4>
 <h4>Printer: <%= Printer.find(@job.printer_id).name %> </h4>
 <h4>Reference: <%= @job.reference %> </h4>
 <h4>Completed: <%= @job.duration_mins %> </h4>
