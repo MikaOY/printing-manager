@@ -2,6 +2,13 @@
 
 <h5>My Filaments</h5>
 <div class="container first-section">
+  <% if Filament.all.length == 0  %>
+    <div class="center-notice">
+      <h4>No filaments found</h4>
+      <p>Studies have shown that printing using material leads to better results.</p>
+    </div>
+  <% end %>
+
   <% Filament.all.each do |filament| %>
     <h6><%= filament.brand %> <%= filament.material %> (<%= filament.color %>)</h6>
     <p>Spool size: <%= filament.full_weight %></p>

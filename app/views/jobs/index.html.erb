@@ -10,6 +10,13 @@
       </div>
 
       <div class="container" style="margin-top:1em;">
+        <% if @jobs.length == 0  %>
+          <div class="center-notice">
+            <h4>Getting lazy, ay?</h4>
+            <p>Go get something printing!</p>
+          </div>
+        <% end %>
+
         <% @jobs.each do |job| %>
           <h6>Job ID - <%= job.id %></h6>
 

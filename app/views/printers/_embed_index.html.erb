@@ -1,6 +1,13 @@
 
 <h5 class="first-heading">Active printers</h5>
 <div class="container first-section">
+  <% if Printer.all.length == 0  %>
+    <div class="center-notice">
+      <h4>No printers found</h4>
+      <p>2D is so 2000's. Give me a 3D printer!</p>
+    </div>
+  <% end %>
+
   <% Printer.all.each do |printer| %>
     <h6><%= printer.name %></h6>
     <h6>Startup Cost: $<%= number_with_precision(printer.startup_cost, :precision => 2) %></h6>
