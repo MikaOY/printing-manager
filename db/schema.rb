@@ -10,15 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220055356) do
+ActiveRecord::Schema.define(version: 20171220055410) do
 
   create_table "filaments", force: :cascade do |t|
     t.string "color"
     t.string "brand"
-    t.float "fullWeight"
-    t.string "type"
+    t.float "full_weight"
+    t.string "material"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer "filament_id"
+    t.float "used_weight"
+    t.datetime "duration_mins"
+    t.integer "printer_id"
+    t.string "reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["filament_id"], name: "index_jobs_on_filament_id"
+    t.index ["printer_id"], name: "index_jobs_on_printer_id"
   end
 
   create_table "printers", force: :cascade do |t|

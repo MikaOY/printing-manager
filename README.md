@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# Links
+
+Getting the DD straight once migrations are in order: `rake db:drop db:create db:migrate db:seed`
