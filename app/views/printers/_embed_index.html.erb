@@ -1,5 +1,10 @@
 
-<h5 class="first-heading">Active printers</h5>
+<div class="container-fluid first-heading">
+  <div class="row">
+    <div class="col-9"><h5>Active Printers</h5></div>
+    <div class="col-3"><div><%= button_to "Add", new_printer_path, method: :get, class:"btn btn-success"  %></div></div>
+  </div>
+</div>
 <div class="container first-section">
   <% if Printer.all.length == 0  %>
     <div class="center-notice">
