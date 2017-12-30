@@ -18,6 +18,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+.center-vertical {
+  display: flex;
+  align-items: center;
+}
+
 p {
   margin-bottom: 0;
 }
@@ -37,6 +42,19 @@ p {
   color: gray;
 }
 
+.sub-info {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.hover-btns {
+  input {
+    float: right;
+  }
+}
+
+// forms
+
 br {
   margin: 0.75em;
 }
@@ -46,10 +64,12 @@ br {
   text-align: right;
 }
 
-input {
-  width: 12em;
-  text-align: right;
-  padding-right: 10px;
+.form-inputs {
+  input {
+    width: 12em;
+    text-align: right;
+    padding-right: 10px;
+  }
 }
 
 .submit-btn {

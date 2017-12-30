@@ -49,6 +49,7 @@ class FilamentsController < ApplicationController
   def destroy
     if @filament.destroy
       flash[:notice] = "Successfully deleted filament!"
+      redirect_to jobs_path
     else
       flash[:alert] = "Error updating filament!"
     end

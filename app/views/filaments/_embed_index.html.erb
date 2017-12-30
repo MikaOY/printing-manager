@@ -14,9 +14,21 @@
   <% end %>
 
   <% Filament.all.each do |filament| %>
-    <h6><%= filament.brand %> <%= filament.material %> (<%= filament.color %>)</h6>
-    <p>Spool size: <%= filament.full_weight %></p>
-    <p>Added <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8">
+          <h6><%= filament.brand %> <%= filament.material %> (<%= filament.color %>)</h6>
+          <p>Spool size: <%= filament.full_weight %> kg</p>
+          <p class="sub-info">Added <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></p>
+        </div>
+        <div class="col-4 center-vertical">
+          <div class="hover-btns">
+            <%= button_to "Edit", { action: "edit", :controller => "filaments", id: filament.id }, method: :get, class: "btn btn-info" %>
+            <%= button_to "Delete", { action: "destroy", :controller => "filaments", id: filament.id }, method: :delete, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr>
   <% end %>
 </div>
