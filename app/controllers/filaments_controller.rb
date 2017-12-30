@@ -3,7 +3,6 @@ class FilamentsController < ApplicationController
   #app/controllers/filaments_controller.rb
   skip_before_action :verify_authenticity_token
   before_action :find_filament, only: [:edit, :update, :show, :destroy]
-  @filament = Filament.new
 
   # Index action to render all filaments
   def index
@@ -20,7 +19,7 @@ class FilamentsController < ApplicationController
     @filament = Filament.new(filament_params)
     if @filament.save
       flash[:notice] = "Successfully created filament!"
-      redirect_to @filament
+      redirect_to @filament 
     else
       flash[:alert] = "Error creating new filament!"
       render :new

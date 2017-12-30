@@ -29,12 +29,14 @@
 
           <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get %></div>
           <div><%= button_to "Delete", { action: "destroy", id: job.id }, method: :delete %></div>
-          <hr>
+          <hr>    
         <% end %>
       </div>
     </div>
 
+    <div class="col-4">
       <%= render "filaments/embed_index" %>
       <%= render "printers/embed_index" %>
+    </div>
   </div>
 </div>
