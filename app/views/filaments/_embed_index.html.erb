@@ -1,10 +1,22 @@
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-9"><h5>My Filaments</h5></div>
-    <div class="col-3"><div><%= button_to "Add", new_filament_path, method: :get, class:"btn btn-success"  %></div></div>
+<div class="col-4">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9"><h5>My Filaments</h5></div>
+      <div class="col-3">
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addFilament" aria-expanded="false" aria-controls="addFilament">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="collapse" id="addFilament">
+    <div class="card card-body">
+      <%= render "filaments/embed_new" %>
+    </div>
   </div>
 </div>
+
 <div class="container first-section">
   <% if Filament.all.length == 0  %>
     <div class="center-notice">
