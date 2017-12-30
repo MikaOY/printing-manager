@@ -19,7 +19,7 @@ class FilamentsController < ApplicationController
     @filament = Filament.new(filament_params)
     if @filament.save
       flash[:notice] = "Successfully created filament!"
-      redirect_to @filament 
+      redirect_to jobs_path
     else
       flash[:alert] = "Error creating new filament!"
       render :new
