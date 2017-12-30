@@ -34,7 +34,7 @@ class FilamentsController < ApplicationController
   def update
     if @filament.update_attributes(filament_params)
       flash[:notice] = "Successfully updated filament!"
-      redirect_to @filament
+      redirect_to jobs_path
     else
       flash[:alert] = "Error updating filament!"
       render :edit
