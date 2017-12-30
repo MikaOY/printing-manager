@@ -19,32 +19,54 @@
 @import "bootstrap";
 
 p {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .first-heading {
-  margin-top: 1.5em; 
+  margin-top: 1.5em;
 }
 
 .first-section {
-  margin-top: 1em; 
+  margin-top: 1em;
 }
 
 .center-notice {
-  width: 90%; 
-  text-align: center; 
-  margin: 3em auto; 
-  color: gray; 
+  width: 90%;
+  text-align: center;
+  margin: 3em auto;
+  color: gray;
+}
+
+br {
+  margin: 0.75em;
+}
+
+.form-label {
+  color: gray;
+  text-align: right;
+}
+
+input {
+  width: 12em;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.submit-btn {
+  @extend .btn;
+  @extend .btn-primary;
+  margin: 1em auto 1em auto;
+  width: auto;
 }
 
 // DEBUG
 
 .red {
-  background-color: red; 
+  background-color: red;
 }
 .yellow {
-  background-color: yellow; 
+  background-color: yellow;
 }
 .blue {
-  background-color: blue; 
+  background-color: blue;
 }

@@ -1,16 +1,29 @@
 
-<%= form_for @filament do |f| %>
-  <%= f.label(:material, 'Material') %>
-  <%= f.text_field :material %>
+<div class="container">
+  <%= form_for @filament do |f| %>
+    <div class="row">
+      <div class="col-2 form-label">
+        <%= f.label(:material, 'Material') %>
+        <br>
+        <%= f.label :color %>
+        <br>
+        <%= f.label :brand %>
+        <br>
+        <%= f.label(:full_weight, 'Spool size (kg)') %>
+        <br>
+      </div>
+      <div class="col-2">
+        <%= f.text_field :material %>
+        <br>
+        <%= f.text_field :color %>
+        <br>
+        <%= f.text_field :brand %>
+        <br>
+        <%= f.number_field :full_weight, :value => 1, :step => :any %>
+        <br>
+      </div>
+    </div>
 
-  <%= f.label :color %>
-  <%= f.text_field :color %>
-
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-
-  <%= f.label(:full_weight, 'Spool size') %>
-  <%= f.number_field :full_weight, :step => :any %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+    <%= f.submit "Submit", class: "submit-btn" %>
+  <% end %>
+</div>
