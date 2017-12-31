@@ -22,9 +22,9 @@
           <p class="sub-info">Added <%= filament.created_at.strftime('%H:%M | %b %d, %Y') %></p>
         </div>
         <div class="col-4 center-vertical">
-          <div class="hover-btns">
-            <%= button_to "Edit", { action: "edit", :controller => "filaments", id: filament.id }, method: :get, class: "btn btn-info" %>
-            <%= button_to "Delete", { action: "destroy", :controller => "filaments", id: filament.id }, method: :delete, class: "btn btn-danger" %>
+          <div class="tight-hover-btns">
+            <%= button_to "Edit", { action: "edit", :controller => "filaments", id: filament.id }, method: :get, class: "btn btn-outline-info" %>
+            <%= button_to "Delete", { action: "destroy", :controller => "filaments", id: filament.id }, method: :delete, class: "btn btn-outline-danger" %>
           </div>
         </div>
       </div>

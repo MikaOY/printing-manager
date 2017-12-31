@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-9"><h3>Print Jobs</h3></div>
-          <div class="col-3"><div><%= button_to "Add Job", { action: "new" }, method: :get, class:"btn btn-primary" %></div></div>
+          <div class="col-3"><div><%= button_to "Add Job", { action: "new" }, method: :get, class:"btn btn-primary", style:"float:right;" %></div></div>
         </div>
       </div>
 
@@ -18,17 +18,23 @@
         <% end %>
 
         <% @jobs.each do |job| %>
-          <h6>Job ID - <%= job.id %></h6>
-
-          <h6>Filament: <%= Filament.find(job.filament_id).brand + ' ' +  Filament.find(job.filament_id).material + ' (' +  Filament.find(job.filament_id).color + ')' %> </h6>
-          <h6>Weight: <%= number_with_precision(job.used_weight, :precision => 3) %> g</h6>
-          <h6>Printer: <%= Printer.find(job.printer_id).name %> </h6>
-          <h6>Reference: <%= job.reference %></h6>
-          <h6>Duration: <%= job.duration_mins %> mins </h6>
-          <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %> </h6>
-
-          <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get %></div>
-          <div><%= button_to "Delete", { action: "destroy", id: job.id }, method: :delete %></div>
+          <div class="row">
+            <div class="col-8">
+              <h6>Filament: <%= Filament.find(job.filament_id).brand + ' ' +  Filament.find(job.filament_id).material + ' (' +  Filament.find(job.filament_id).color + ')' %> </h6>
+              <h6>Weight: <%= number_with_precision(job.used_weight, :precision => 3) %> g</h6>
+              <h6>Printer: <%= Printer.find(job.printer_id).name %> </h6>
+              <h6>Reference: <%= job.reference %></h6>
+              <h6>Duration: <%= job.duration_mins %> mins </h6>
+              <h6>Started: <%= job.created_at.strftime('%H:%M | %b %d, %Y') %> </h6>
+            </div>
+            <div class="col-4">
+              <div class="hover-btns job-btns">
+                <div><%= button_to "Edit...", { action: "edit", id: job.id }, method: :get, class: "btn btn-info" %></div>
+                <br style="line-height:20px;">
+                <div><%= button_to "Delete", { action: "destroy", id: job.id }, method: :delete, class: "btn btn-danger" %></div>
+              </div>
+            </div>
+          </div>
           <hr>
         <% end %>
       </div>

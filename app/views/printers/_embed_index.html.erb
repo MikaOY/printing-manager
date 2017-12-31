@@ -14,9 +14,21 @@
   <% end %>
 
   <% Printer.all.each do |printer| %>
-    <h6><%= printer.name %></h6>
-    <h6>Startup Cost: $<%= number_with_precision(printer.startup_cost, :precision => 2) %></h6>
-    <h6>Created: <%= printer.created_at.strftime('%b %d, %Y') %></h6>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8">
+          <h6><%= printer.name %></h6>
+          <h6>Startup Cost: $<%= number_with_precision(printer.startup_cost, :precision => 2) %></h6>
+          <h6>Created: <%= printer.created_at.strftime('%b %d, %Y') %></h6>
+        </div>
+        <div class="col-4 center-vertical">
+          <div class="tight-hover-btns">
+            <%= button_to "Edit", { action: "edit", :controller => "printers", id: printer.id }, method: :get, class: "btn btn-outline-info" %>
+            <%= button_to "Delete", { action: "destroy", :controller => "printers", id: printer.id }, method: :delete, class: "btn btn-outline-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr>
   <% end %>
 </div>

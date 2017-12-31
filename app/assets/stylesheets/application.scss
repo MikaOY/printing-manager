@@ -53,6 +53,14 @@ p {
   }
 }
 
+.tight-hover-btns {
+  @extend .hover-btns;
+  input {
+    margin-bottom: 0.25em;
+    line-height: 1em;
+  }
+}
+
 // forms
 
 br {
