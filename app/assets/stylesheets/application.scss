@@ -19,8 +19,29 @@
 @import "bootstrap";
 
 // brand colors
+
 $primary: blue;
 $secondary: green;
+
+// fonts
+
+body, .body {
+  font-family: 'Arvo', serif;
+}
+
+h1, h2, h3, h4, h5, h6, button, .nav-link {
+  font-family: 'Patua One', cursive;
+}
+
+// general
+
+.header {
+  margin-bottom: 2em;
+
+  h1, h6 {
+    display: inline;
+  }
+}
 
 .center-vertical {
   display: flex;

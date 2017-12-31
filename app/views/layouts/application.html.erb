@@ -8,11 +8,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Patua+One" rel="stylesheet">
   </head>
 
   <body>
     <div class="container" style="margin-top:2em;">
-      <h1 style="margin-bottom:1em;">3D Printing Manager</h1>
+      <div class="header">
+        <h1 style="margin-right:0.25em;">3D Printing Manager</h1>
+        <h6>by TIKA</h6>
+        <hr>
+      </div>
       <%= yield %>
     </div>
   </body>
