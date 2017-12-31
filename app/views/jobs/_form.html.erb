@@ -1,34 +1,33 @@
 
-
 <div class="container">
-  <%= form_for @job do |f| %>
+  <%= form_for @job do |j| %>
     <div class="row">
       <div class="col-2 form-label">
-        <%= f.label(:filament_id, 'Filament') %>
+        <%= j.label(:filament_id, 'Filament') %>
         <br>
-        <%= f.label(:used_weight, 'Weight Used (g)') %>
+        <%= j.label(:used_weight, 'Weight Used (g)') %>
         <br>
-        <%= f.label(:printer_id, 'Printer') %>
+        <%= j.label(:printer_id, 'Printer') %>
         <br>
-        <%= f.label(:reference, 'Reference') %>
+        <%= j.label(:reference, 'Reference') %>
         <br>
-        <%= f.label(:duration_mins, 'Duration (mins)') %>
+        <%= j.label(:duration_mins, 'Duration (mins)') %>
         <br>
       </div>
       <div class="col-2 form-inputs">
         <%= select_tag(:filament_id, options_for_select(Filament.all.map { |f| [f.brand + ' - ' + f.material + ' - ' + f.color, f.id] }, @job.filament_id), {include_blank: "Select filament"}) %>
         <br>
-        <%= f.number_field :used_weight, :step => :any %>
+        <%= j.number_field :used_weight, :step => :any %>
         <br>
         <%= select_tag(:printer_id, options_for_select(Printer.all.map { |p| [p.name, p.id] }, @job.printer_id), {include_blank: "Select printer"}) %>
         <br>
-        <%= f.text_field :reference %>
+        <%= j.text_field :reference %>
         <br>
-        <%= f.number_field :duration_mins %>
+        <%= j.number_field :duration_mins, :value => 1 %>
         <br>
       </div>
     </div>
 
-    <%= f.submit "Submit", class: "submit-btn" %>
+    <%= j.submit "Submit", class: "submit-btn" %>
   <% end %>
 </div>

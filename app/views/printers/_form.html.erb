@@ -2,22 +2,22 @@
 
 
 <div class="container">
-  <%= form_for @printer do |f| %>
+  <%= form_for @printer do |p| %>
     <div class="row">
       <div class="col-2 form-label">
-        <%= f.label :name %>
+        <%= p.label :name %>
         <br>
-        <%= f.label(:startup_cost, 'Startup Cost') %>
+        <%= p.label(:startup_cost, 'Startup Cost') %>
         <br>
       </div>
       <div class="col-2 form-inputs">
-        <%= f.text_field :name %>
+        <%= p.text_field :name %>
         <br>
-        <%= f.number_field :startup_cost, value: number_to_currency(f.object.startup_cost.to_f, delimiter: '', unit: ''), step: :any %>
+        <%= p.number_field :startup_cost, value: number_to_currency(p.object.startup_cost.to_f, delimiter: '', unit: ''), step: :any %>
         <br>
       </div>
     </div>
 
-    <%= f.submit "Submit", class: "submit-btn" %>
+    <%= p.submit "Submit", class: "submit-btn" %>
   <% end %>
 </div>

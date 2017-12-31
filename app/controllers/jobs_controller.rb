@@ -1,4 +1,6 @@
 
+require 'json'
+
 class JobsController < ApplicationController
   #app/controllers/jobs_controller.rb
   skip_before_action :verify_authenticity_token
@@ -20,7 +22,8 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "Successfully created print job!"
-      render :index
+      puts('JOB: ' + @job.to_json())
+      redirect_to jobs_path
     else
       flash[:alert] = "Error creating new print job!"
       render :new
