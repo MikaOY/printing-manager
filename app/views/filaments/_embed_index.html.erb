@@ -1,8 +1,8 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-9"><h5>My Filaments</h5></div>
-    <div class="col-3"><div><%= button_to "Add", new_filament_path, method: :get, class:"btn btn-success"  %></div></div>
+    <div class="col-9"><h5 class="header-with-icon">My Filaments</h5></div>
+    <div class="col-3"><%= link_to raw("<i class=\"fa fa-2x fa-plus\" aria-hidden=\"true\"></i>"), new_filament_path, method: :get, class:"icon-btn"  %></div>
   </div>
 </div>
 <div class="container first-section">
@@ -23,8 +23,8 @@
         </div>
         <div class="col-4 center-vertical">
           <div class="tight-hover-btns">
-            <%= button_to "Edit", { action: "edit", :controller => "filaments", id: filament.id }, method: :get, class: "btn btn-outline-info" %>
-            <%= button_to "Delete", { action: "destroy", :controller => "filaments", id: filament.id }, method: :delete, class: "btn btn-outline-danger" %>
+            <%= link_to raw("<i class=\"fa fa-pencil-alt\" aria-hidden=\"true\"></i>"), { action: "edit", :controller => "filaments", id: filament.id }, method: :get, class: "btn btn-outline-info" %>
+            <%= link_to raw("<i class=\"far fa-trash-alt\" aria-hidden=\"true\"></i>"), { action: "destroy", :controller => "filaments", id: filament.id }, method: :delete, class: "btn btn-outline-danger" %>
           </div>
         </div>
       </div>

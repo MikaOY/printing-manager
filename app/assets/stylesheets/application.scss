@@ -18,6 +18,10 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+// brand colors
+$primary: blue;
+$secondary: green;
+
 .center-vertical {
   display: flex;
   align-items: center;
@@ -29,6 +33,10 @@ p {
 
 .first-heading {
   margin-top: 1.5em;
+}
+
+.header-with-icon {
+  line-height: 1.5em;
 }
 
 .first-section {
@@ -48,17 +56,26 @@ p {
 }
 
 .hover-btns {
-  input {
+  input, a {
     float: right;
+  }
+  a {
+    width: 40px;
   }
 }
 
 .tight-hover-btns {
   @extend .hover-btns;
-  input {
+  input, a {
     margin-bottom: 0.25em;
     line-height: 1em;
   }
+}
+
+.icon-btn {
+  line-height: 1.25em;
+  float: right;
+  color: $secondary;
 }
 
 // forms
