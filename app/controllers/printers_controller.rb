@@ -19,7 +19,7 @@ class PrintersController < ApplicationController
     @printer = Printer.new(printer_params)
     if @printer.save
       flash[:notice] = "Successfully created printer!"
-      redirect_to @printer 
+      redirect_to jobs_path
     else
       flash[:alert] = "Error creating new printer!"
       render :new
@@ -34,7 +34,7 @@ class PrintersController < ApplicationController
   def update
     if @printer.update_attributes(printer_params)
       flash[:notice] = "Successfully updated printer!"
-      redirect_to @printer
+      redirect_to jobs_path
     else
       flash[:alert] = "Error updating printer!"
       render :edit

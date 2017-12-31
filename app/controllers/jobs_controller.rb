@@ -20,10 +20,10 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       flash[:notice] = "Successfully created print job!"
-      redirect_to :action => 'show' 
+      redirect_to jobs_path
     else
       flash[:alert] = "Error creating new print job!"
-      render :action => 'index'
+      render :new
     end
   end
 
@@ -35,7 +35,7 @@ class JobsController < ApplicationController
   def update
     if @job.update_attributes(job_params)
       flash[:notice] = "Successfully updated print job!"
-      redirect_to @job
+      redirect_to jobs_path
     else
       flash[:alert] = "Error updating print job!"
       render :edit
