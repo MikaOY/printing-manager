@@ -1,27 +1,32 @@
 
-# README
+# FlowJob
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Website of a platform monitoring 3D printing jobs, filament usage, and 3D printers.
 
-Things you may want to cover:
 
-* Ruby version
+### Contributors:
+Coded with <3 by [@MikaOY](https://github.com/MikaOY) and [@omnikitty](https://github.com/omnikitty).
 
-* System dependencies
+### UPDATES:
 
-* Configuration
+*2018-01-01: Styling*
+We set up the main styling aspects of the site, so you can actually use it now without getting an aneurysm.
 
-* Database creation
+## Get started
 
-* Database initialization
+Clone the repository, and...
+```
+bundle install
+rake db:migrate
+```
 
-* How to run the test suite
+## Debugging commands
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails s` launches a web server where you can view the site at localhost:3000
 
-* Deployment instructions
+`rake routes` allows you to view all URLs accepted by the API
 
-## Links
+## Reference
 
-Getting the DB straight once migrations are in order: `rake db:drop db:create db:migrate db:seed`
+Getting the DB straight once migrations are in order:   
+`rake db:drop db:create db:migrate db:seed`
