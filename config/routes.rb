@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :printers
   resources :filaments
-  resources :jobs
+  resources :jobs, except: [:edit]
 end

@@ -43,8 +43,6 @@
             </div>
             <div class="col-4">
               <div class="hover-btns job-btns">
-                <div><%= link_to raw("<i class=\"fa fa-pencil-alt\" aria-hidden=\"true\"></i>"), { action: "edit", id: job.id }, method: :get, class: "btn btn-info" %></div>
-                <br style="line-height:20px;">
                 <div><%= link_to raw("<i class=\"far fa-trash-alt\" aria-hidden=\"true\"></i>"), { action: "destroy", id: job.id }, method: :delete, class: "btn btn-danger" %></div>
               </div>
             </div>
